@@ -95,7 +95,7 @@ function Frames({
   );
 }
 
-function Frame({ description, url, c = new THREE.Color(), ...props }) {
+function Frame({ description, title, url, c = new THREE.Color(), ...props }) {
   const image = useRef();
   const frame = useRef();
   const [, params] = useRoute("/item/:id");
@@ -170,9 +170,20 @@ function Frame({ description, url, c = new THREE.Color(), ...props }) {
         anchorX="left"
         anchorY="top"
         position={[0.55, GOLDEN_RATIO, 0]}
+        fontSize={0.03}
+        font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-700-normal.woff"
+        color={hovered ? "#c23a67" : "black"}
+      >
+        {title}
+      </Text>
+      <Text
+        maxWidth={0.4}
+        anchorX="left"
+        anchorY="top"
+        position={[0.55, GOLDEN_RATIO-0.05, 0]}
         fontSize={0.025}
         font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff"
-        color={hovered ? "#c23a67" : "black"}
+        color={"black"}
       >
         {description}
       </Text>
