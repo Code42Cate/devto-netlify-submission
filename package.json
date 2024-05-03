@@ -1,0 +1,33 @@
+{
+  "name": "devto-submission",
+  "version": "1.0.0",
+  "type": "module",
+  "author": {
+    "name": "Jonas Scholz",
+    "email": "jonas.scholz@bbscholz.de"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.3",
+    "maath": "^0.10.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.164.1",
+    "uuid-by-string": "^4.0.0",
+    "wouter": "^3.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "eslint": "^9.1.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "vite": "^5.2.11"
+  }
+}
