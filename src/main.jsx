@@ -8,6 +8,7 @@ const netlifyCDN = (url) =>
 const images = [
   // Back
   {
+    imageId: 0,
     position: [-0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN(
@@ -17,6 +18,7 @@ const images = [
     description: "Duchamp's 1917 creation, Fountain, marked a pivotal moment in modern art. Taking a urinal, turning it sideways, and signing it 'R. Mutt,' he challenged conventional notions of art. Though rejected from an exhibition, it sparked debates about art's essence. Fountain's significance lies in its ability to provoke thought and disagreement, pioneering Conceptual art and the Readymade movement.",
   },
   {
+    imageId: 1,
     position: [0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN(
@@ -27,6 +29,7 @@ const images = [
   },
   // Left
   {
+    imageId: 2,
     position: [-1.75, 0, 0.25],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
@@ -36,6 +39,7 @@ const images = [
     description: "Picasso's Guernica stands as a powerful symbol of the horrors of war and a potent tool for political activism. Depicting the bombing of Guernica, it evokes the brutality of conflict through stark monochrome imagery. Created to support the antifascist cause in Spain, Picasso withheld its display until Franco's regime fell. Guernica remains a cherished emblem of justice and accountability, especially for Spain and the Basque people.",
   },
   {
+    imageId: 3,
     position: [-2.4, 0, 1.5],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
@@ -45,6 +49,7 @@ const images = [
     description: "Joseph Beuys's 7,000 Oak Trees project marked a pivotal moment in environmentally-focused art, heralding a movement of conceptual earthworks addressing ecological concerns. Responding to urbanization and habitat destruction in Kassel, Germany, Beuys, with volunteers, planted 7,000 oaks, each marked by a basalt stone. Beyond ecological intervention, it symbolized the start of Germany's environmental movement, fostering awareness of human impact on ecosystems as the trees matured.",
   },
   {
+    imageId: 4,
     position: [-3, 0, 2.75],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
@@ -55,6 +60,7 @@ const images = [
   },
   // Right
   {
+    imageId: 5,
     position: [1.75, 0, 0.25],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
@@ -64,6 +70,7 @@ const images = [
     description: "Love him or hate him, Jeff Koons has undeniably made a significant impact on the art world, much like Marcel Duchamp did with The Fountain. Throughout his career, Koons has pushed boundaries, questioning the essence of art itself. He challenges whether art must be personally crafted or if it can be mass-produced by a workshop. This raises ethical dilemmas about the commodification of art and its relationship with marketing. Balloon Dog epitomizes these questions, as Koons has reproduced it in various forms, generating substantial profits and ubiquitous recognition across media platforms.",
   },
   {
+    imageId: 6,
     position: [2.15, 0, 1.7],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
@@ -73,6 +80,7 @@ const images = [
     description: "The Virtual Gallery 7",
   },
   {
+    imageId: 7,
     position: [2, 0, 3],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(

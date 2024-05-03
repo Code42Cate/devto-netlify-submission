@@ -24,6 +24,19 @@ export const App = ({ images }) => {
     if (windowWidth.current <= 1000) return { fov: 100, position: [0, 2, 15] };
   };
 
+  // listen ctrl+s or cmd+s
+  useEffect(() => {
+    const handleSave = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+        e.preventDefault();
+
+        // get
+      }
+    };
+    window.addEventListener("keydown", handleSave);
+    return () => window.removeEventListener("keydown", handleSave);
+  }, []);
+
   return (
     <Canvas dpr={[1, 2]} camera={handleResize()}>
       {/* <CameraControls /> */}
@@ -63,7 +76,7 @@ function Frames({
   const [, params] = useRoute("/item/:id");
   const [, setLocation] = useLocation();
   useEffect(() => {
-    clicked.current = ref.current.getObjectByName(params?.id);
+    clicked.current = ref.current.getObjectByName(Number(params?.id));
     if (clicked.current) {
       clicked.current.parent.updateWorldMatrix(true, true);
       clicked.current.parent.localToWorld(p.set(0, GOLDEN_RATIO / 2, 1.25));
@@ -83,7 +96,9 @@ function Frames({
       onClick={(e) => {
         e.stopPropagation();
         setLocation(
-          clicked.current === e.object ? "/" : "/item/" + e.object.name
+          clicked.current === e.object
+            ? "/"
+            : "/item/" + encodeURIComponent(e.object.name)
         );
       }}
       onPointerMissed={() => setLocation("/")}
@@ -95,14 +110,12 @@ function Frames({
   );
 }
 
-function Frame({ description, title, url, c = new THREE.Color(), ...props }) {
+function Frame({ description, title, imageId, url, c = new THREE.Color(), ...props }) {
   const image = useRef();
   const frame = useRef();
   const [, params] = useRoute("/item/:id");
   const [hovered, hover] = useState(false);
-  const [rnd] = useState(() => Math.random());
-  const name = getUuid(url);
-  const isActive = params?.id === name;
+  const isActive = Number(params?.id) == imageId;
   useCursor(hovered);
   useFrame((state, dt) => {
     if (isActive) {
@@ -131,9 +144,9 @@ function Frame({ description, title, url, c = new THREE.Color(), ...props }) {
     );
   });
   return (
-    <group {...props}>
+    <group {...props} userData={{ url }}>
       <mesh
-        name={name}
+        name={imageId}
         onPointerOver={(e) => {
           e.stopPropagation();
           hover(true);
