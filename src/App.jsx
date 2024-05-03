@@ -13,7 +13,7 @@ import * as THREE from "three";
 import getUuid from "uuid-by-string";
 import { useLocation, useRoute } from "wouter";
 
-const GOLDENRATIO = 1.61803398875;
+const GOLDEN_RATIO = 1.61803398875;
 
 export const App = ({ images }) => {
   const windowWidth = useRef(window.innerWidth);
@@ -66,7 +66,7 @@ function Frames({
     clicked.current = ref.current.getObjectByName(params?.id);
     if (clicked.current) {
       clicked.current.parent.updateWorldMatrix(true, true);
-      clicked.current.parent.localToWorld(p.set(0, GOLDENRATIO / 2, 1.25));
+      clicked.current.parent.localToWorld(p.set(0, GOLDEN_RATIO / 2, 1.25));
       clicked.current.parent.getWorldQuaternion(q);
     } else {
       p.set(0, 0, 5.5);
@@ -105,8 +105,14 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   const isActive = params?.id === name;
   useCursor(hovered);
   useFrame((state, dt) => {
-    image.current.material.zoom =
-      2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2;
+    if (isActive) {
+      state.camera.zoom = 1;
+      state.camera.updateProjectionMatrix();
+      easing.dampC(frame.current.material.color, "white", 0.1, dt);
+      // remove
+      return;
+    }
+
     easing.damp3(
       image.current.scale,
       [
@@ -133,8 +139,8 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
           hover(true);
         }}
         onPointerOut={() => hover(false)}
-        scale={[1, GOLDENRATIO, 0.05]}
-        position={[0, GOLDENRATIO / 2, 0]}
+        scale={[1, GOLDEN_RATIO, 0.05]}
+        position={[0, GOLDEN_RATIO / 2, 0]}
       >
         <boxGeometry />
         <meshStandardMaterial
@@ -163,9 +169,9 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         maxWidth={0.1}
         anchorX="left"
         anchorY="top"
-        position={[0.55, GOLDENRATIO, 0]}
+        position={[0.55, GOLDEN_RATIO, 0]}
         fontSize={0.025}
-        color={hovered ? "#c23a67" : "black"}        
+        color={hovered ? "#c23a67" : "black"}
       >
         {name.split("-").join(" ")}
       </Text>
