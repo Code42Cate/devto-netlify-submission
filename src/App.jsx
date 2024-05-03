@@ -176,17 +176,19 @@ function Frame({ description, title, url, c = new THREE.Color(), ...props }) {
       >
         {title}
       </Text>
-      <Text
-        maxWidth={0.4}
-        anchorX="left"
-        anchorY="top"
-        position={[0.55, GOLDEN_RATIO-0.05, 0]}
-        fontSize={0.025}
-        font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff"
-        color={"black"}
-      >
-        {description}
-      </Text>
+      {isActive && (
+        <Text
+          maxWidth={0.4}
+          anchorX="left"
+          anchorY="top"
+          position={[0.55, GOLDEN_RATIO - 0.05, 0]}
+          fontSize={0.025}
+          font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff"
+          color={"black"}
+        >
+          {description}
+        </Text>
+      )}
     </group>
   );
 }
@@ -210,7 +212,7 @@ function Neon() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 1.8]}
-        position={[-1.7, 0.02, 4]}
+        position={[-2, 0.02, 4]}
       >
         <cylinderGeometry args={[0.02, 0.02, 1.5, 32]} />
         <meshStandardMaterial
@@ -222,7 +224,7 @@ function Neon() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.05]}
-        position={[-1.2, 0.02, 2.2]}
+        position={[-1.8, 0.02, 2.2]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial

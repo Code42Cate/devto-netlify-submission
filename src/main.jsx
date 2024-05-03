@@ -36,7 +36,7 @@ const images = [
     description: "Picasso's Guernica stands as a powerful symbol of the horrors of war and a potent tool for political activism. Depicting the bombing of Guernica, it evokes the brutality of conflict through stark monochrome imagery. Created to support the antifascist cause in Spain, Picasso withheld its display until Franco's regime fell. Guernica remains a cherished emblem of justice and accountability, especially for Spain and the Basque people.",
   },
   {
-    position: [-2.15, 0, 1.5],
+    position: [-2.4, 0, 1.5],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
       "https://www.ackroydandharvey.com/wp-content/uploads/2021/08/02.-7000-Oaks-1982.jpg"
@@ -45,7 +45,7 @@ const images = [
     description: "Joseph Beuys's 7,000 Oak Trees project marked a pivotal moment in environmentally-focused art, heralding a movement of conceptual earthworks addressing ecological concerns. Responding to urbanization and habitat destruction in Kassel, Germany, Beuys, with volunteers, planted 7,000 oaks, each marked by a basalt stone. Beyond ecological intervention, it symbolized the start of Germany's environmental movement, fostering awareness of human impact on ecosystems as the trees matured.",
   },
   {
-    position: [-2, 0, 2.75],
+    position: [-3, 0, 2.75],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
       "https://www.moma.org/d/assets/W1siZiIsIjIwMTgvMTAvMzEvMXNkZHAzdDhoNV80MjU1Mi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgOTAgLXJlc2l6ZSAyMDAweDIwMDBcdTAwM2UiXV0/42552.jpg"
@@ -64,7 +64,7 @@ const images = [
     description: "Love him or hate him, Jeff Koons has undeniably made a significant impact on the art world, much like Marcel Duchamp did with The Fountain. Throughout his career, Koons has pushed boundaries, questioning the essence of art itself. He challenges whether art must be personally crafted or if it can be mass-produced by a workshop. This raises ethical dilemmas about the commodification of art and its relationship with marketing. Balloon Dog epitomizes these questions, as Koons has reproduced it in various forms, generating substantial profits and ubiquitous recognition across media platforms.",
   },
   {
-    position: [2.15, 0, 1.5],
+    position: [2.15, 0, 1.7],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
       "https://images.unsplash.com/photo-1549490349-8643362247b5"
@@ -73,7 +73,7 @@ const images = [
     description: "The Virtual Gallery 7",
   },
   {
-    position: [2, 0, 2.75],
+    position: [2, 0, 3],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
       "https://images.unsplash.com/photo-1569091791842-7cfb64e04797"
