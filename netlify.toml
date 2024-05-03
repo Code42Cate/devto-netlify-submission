@@ -1,2 +1,9 @@
 [images]
-remote_images = ["https://images.unsplash.com/*"]
+remote_images = [
+  "https://images.unsplash.com/*",
+  "https://upload.wikimedia.org/wikipedia/commons/*",
+  "https://de.artsdot.com/*",
+  "https://www.ackroydandharvey.com/*",
+  "https://www.moma.org/*",
+  "https://www.arttrav.com/*",
+]

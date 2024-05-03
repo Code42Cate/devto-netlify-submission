@@ -11,51 +11,51 @@ const images = [
     position: [-0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1714715350295-5f00e902f0d7"
+      "https://upload.wikimedia.org/wikipedia/commons/f/f6/Duchamp_Fountaine.jpg"
     ),
-    description: "The Virtual Gallery 1",
+    description: "Fountain (Duchamp)",
   },
   {
     position: [0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1"
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/P1050763_Louvre_code_Hammurabi_face_rwk.JPG"
     ),
-    description: "The Virtual Gallery 2",
+    description: "Codex Hammurapi",
   },
   // Left
   {
     position: [-1.75, 0, 0.25],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1714676982703-0c51440c6c1a"
+      "https://de.artsdot.com/ADC/Art-ImgScreen-3.nsf/O/A-8XYPCB/$FILE/Pablo-picasso-guernica.Jpg"
     ),
-    description: "The Virtual Gallery 3",
+    description: "Guernica (Picasso)",
   },
   {
     position: [-2.15, 0, 1.5],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1579783928621-7a13d66a62d1"
+      "https://www.ackroydandharvey.com/wp-content/uploads/2021/08/02.-7000-Oaks-1982.jpg"
     ),
-    description: "The Virtual Gallery 4",
+    description: "7000 Oak Trees (Beuys)",
   },
   {
     position: [-2, 0, 2.75],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1713107102323-00cd32c4b7df"
+      "https://www.moma.org/d/assets/W1siZiIsIjIwMTgvMTAvMzEvMXNkZHAzdDhoNV80MjU1Mi5qcGciXSxbInAiLCJjb252ZXJ0IiwiLXF1YWxpdHkgOTAgLXJlc2l6ZSAyMDAweDIwMDBcdTAwM2UiXV0/42552.jpg"
     ),
-    description: "The Virtual Gallery 5",
+    description: "Rhythm 0 (Abramovic)",
   },
   // Right
   {
     position: [1.75, 0, 0.25],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1714030962958-0a0e06717ea5"
+      "https://www.arttrav.com/wp-content/uploads/2021/10/jeff-koons-strozzi-phAlexandraKorey03.jpg"
     ),
-    description: "The Virtual Gallery 6",
+    description: "Balloon Dog (Koons)",
   },
   {
     position: [2.15, 0, 1.5],
