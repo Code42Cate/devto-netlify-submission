@@ -5,7 +5,7 @@ import "./index.css";
 const netlifyCDN = (url) =>
   `https://the-virtual-gallery.netlify.app/.netlify/images?url=${url}&w=2520&h=1500&fit=fill`;
 
-const images = [
+export const images = [
   // Back
   {
     imageId: 0,

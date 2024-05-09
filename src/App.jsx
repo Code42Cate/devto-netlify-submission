@@ -8,9 +8,8 @@ import {
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import * as THREE from "three";
-import getUuid from "uuid-by-string";
 import { useLocation, useRoute } from "wouter";
 
 const GOLDEN_RATIO = 1.61803398875;
@@ -24,13 +23,28 @@ export const App = ({ images }) => {
     if (windowWidth.current <= 1000) return { fov: 100, position: [0, 2, 15] };
   };
 
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+
   // listen ctrl+s or cmd+s
   useEffect(() => {
     const handleSave = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "s") {
         e.preventDefault();
+        const id = window.location.pathname.split("/").pop();
+        if (id === "") return;
 
-        // get
+        const image = images.find((image) => image.imageId === Number(id));
+        if (!image) return;
+
+        setShowDownloadModal(true);
+
+        /*
+        const a = document.createElement("a");
+        a.href = image.url;
+        a.target = "_blank";
+        a.download = image.title;
+        a.click();
+        */
       }
     };
     window.addEventListener("keydown", handleSave);
@@ -38,31 +52,34 @@ export const App = ({ images }) => {
   }, []);
 
   return (
-    <Canvas dpr={[1, 2]} camera={handleResize()}>
-      {/* <CameraControls /> */}
-      <color attach="background" args={["#E7E5E4"]} />
-      <fog attach="fog" args={["#191920", 0, 15]} />
-      <group position={[0, -0.5, 0]}>
-        <Frames images={images} />
-        <mesh rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[50, 50]} />
-          <MeshReflectorMaterial
-            blur={[300, 100]}
-            resolution={2048}
-            mixBlur={1}
-            mixStrength={80}
-            roughness={1}
-            depthScale={1.23}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color="#060606"
-            metalness={1.12}
-          />
-        </mesh>
-        <Neon />
-      </group>
-      <Environment preset="studio" />
-    </Canvas>
+    <>
+      <Canvas dpr={[1, 2]} camera={handleResize()}>
+        {/* <CameraControls /> */}
+        <color attach="background" args={["#E7E5E4"]} />
+        <fog attach="fog" args={["#191920", 0, 15]} />
+        <group position={[0, -0.5, 0]}>
+          <Frames images={images} />
+          <mesh rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <MeshReflectorMaterial
+              blur={[300, 100]}
+              resolution={2048}
+              mixBlur={1}
+              mixStrength={80}
+              roughness={1}
+              depthScale={1.23}
+              minDepthThreshold={0.4}
+              maxDepthThreshold={1.4}
+              color="#060606"
+              metalness={1.12}
+            />
+          </mesh>
+          <Neon />
+        </group>
+        <Environment preset="studio" />
+      </Canvas>
+      {showDownloadModal && <div className="modal">Download</div>}
+    </>
   );
 };
 
@@ -110,12 +127,22 @@ function Frames({
   );
 }
 
-function Frame({ description, title, imageId, url, c = new THREE.Color(), ...props }) {
+function Frame({
+  description,
+  title,
+  imageId,
+  url,
+  c = new THREE.Color(),
+  ...props
+}) {
   const image = useRef();
   const frame = useRef();
   const [, params] = useRoute("/item/:id");
   const [hovered, hover] = useState(false);
+  const [descriptionSize, setDescriptionSize] = useState([0, 0, 0]);
+  const descriptionRef = useRef(null);
   const isActive = Number(params?.id) == imageId;
+
   useCursor(hovered);
   useFrame((state, dt) => {
     if (isActive) {
@@ -123,6 +150,19 @@ function Frame({ description, title, imageId, url, c = new THREE.Color(), ...pro
       state.camera.updateProjectionMatrix();
       easing.dampC(frame.current.material.color, "white", 0.1, dt);
       // remove
+
+      if (descriptionRef.current) {
+        const { x, y, z } = descriptionRef.current.geometry.boundingBox.min;
+        if (
+          x === descriptionSize[0] &&
+          y === descriptionSize[1] &&
+          z === descriptionSize[2]
+        )
+          return;
+        setDescriptionSize([x, y, z]);
+        console.log(x, y, z);
+      }
+
       return;
     }
 
@@ -190,17 +230,40 @@ function Frame({ description, title, imageId, url, c = new THREE.Color(), ...pro
         {title}
       </Text>
       {isActive && (
-        <Text
-          maxWidth={0.4}
-          anchorX="left"
-          anchorY="top"
-          position={[0.55, GOLDEN_RATIO - 0.05, 0]}
-          fontSize={0.025}
-          font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff"
-          color={"black"}
-        >
-          {description}
-        </Text>
+        <>
+          <Text
+            maxWidth={0.4}
+            anchorX="left"
+            ref={descriptionRef}
+            anchorY="top"
+            position={[0.55, GOLDEN_RATIO - 0.05, 0]}
+            fontSize={0.025}
+            font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff"
+            color={"black"}
+          >
+            {description}
+          </Text>
+          {descriptionSize[1] !== undefined && (
+            <mesh
+              onClick={(e) => {
+                console.log("CLICK");
+                e.stopPropagation();
+              }}
+              position={[0.65, GOLDEN_RATIO + descriptionSize[1] - 0.15, 0]}
+            >
+              <boxGeometry args={[0.2, 0.08, 0.02]} />
+              <meshStandardMaterial color="white" />
+              <Text
+                position={[-0.01, 0, 0.03]}
+                fontSize={0.04}
+                color="black"
+                font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-700-normal.woff"
+              >
+                Save
+              </Text>
+            </mesh>
+          )}
+        </>
       )}
     </group>
   );
