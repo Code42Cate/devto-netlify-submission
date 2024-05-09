@@ -52,7 +52,17 @@ export const App = ({ images }) => {
         </group>
         <Environment preset="studio" />
       </Canvas>
-      {showDownloadModal && <div className="modal">Download</div>}
+      {showDownloadModal && (
+        <div>
+          <div
+            className="modal-overlay"
+            onClick={() => {
+              setShowDownloadModal(false);
+            }}
+          />
+          <div className="modal">Download</div>
+        </div>
+      )}
     </>
   );
 };
