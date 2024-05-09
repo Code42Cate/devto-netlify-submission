@@ -25,32 +25,6 @@ export const App = ({ images }) => {
 
   const [showDownloadModal, setShowDownloadModal] = useState(false);
 
-  // listen ctrl+s or cmd+s
-  useEffect(() => {
-    const handleSave = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
-        e.preventDefault();
-        const id = window.location.pathname.split("/").pop();
-        if (id === "") return;
-
-        const image = images.find((image) => image.imageId === Number(id));
-        if (!image) return;
-
-        setShowDownloadModal(true);
-
-        /*
-        const a = document.createElement("a");
-        a.href = image.url;
-        a.target = "_blank";
-        a.download = image.title;
-        a.click();
-        */
-      }
-    };
-    window.addEventListener("keydown", handleSave);
-    return () => window.removeEventListener("keydown", handleSave);
-  }, []);
-
   return (
     <>
       <Canvas dpr={[1, 2]} camera={handleResize()}>
@@ -58,7 +32,7 @@ export const App = ({ images }) => {
         <color attach="background" args={["#E7E5E4"]} />
         <fog attach="fog" args={["#191920", 0, 15]} />
         <group position={[0, -0.5, 0]}>
-          <Frames images={images} />
+          <Frames images={images} setShowDownloadModal={setShowDownloadModal} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
@@ -87,6 +61,7 @@ function Frames({
   images,
   q = new THREE.Quaternion(),
   p = new THREE.Vector3(),
+  setShowDownloadModal,
 }) {
   const ref = useRef();
   const clicked = useRef();
@@ -121,7 +96,7 @@ function Frames({
       onPointerMissed={() => setLocation("/")}
     >
       {images.map(
-        (props) => <Frame key={props.url} {...props} /> /* prettier-ignore */
+        (props) => <Frame key={props.url} setShowDownloadModal={setShowDownloadModal} {...props} /> /* prettier-ignore */
       )}
     </group>
   );
@@ -132,6 +107,7 @@ function Frame({
   title,
   imageId,
   url,
+  setShowDownloadModal,
   c = new THREE.Color(),
   ...props
 }) {
@@ -246,7 +222,7 @@ function Frame({
           {descriptionSize[1] !== undefined && (
             <mesh
               onClick={(e) => {
-                console.log("CLICK");
+                setShowDownloadModal(true);
                 e.stopPropagation();
               }}
               position={[0.65, GOLDEN_RATIO + descriptionSize[1] - 0.15, 0]}
