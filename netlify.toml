@@ -7,4 +7,5 @@ remote_images = [
   "https://www.moma.org/*",
   "https://www.arttrav.com/*",
   "https://meine.rs/*",
+  "https://malteroemer.com",
 ]

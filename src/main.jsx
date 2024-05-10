@@ -33,7 +33,7 @@ export const images = [
     position: [-1.75, 0, 0.25],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://de.artsdot.com/ADC/Art-ImgScreen-3.nsf/O/A-8XYPCB/$FILE/Pablo-picasso-guernica.Jpg"
+      "https://malteroemer.com/wp-content/uploads/2024/03/Sandkuchendeautomat-2024-Malte-Roemer-kinetische-Installation-Kunstakademie-Karlsruhe-Scheibenhardt-scaled.jpg"
     ),
     title: "Guernica (Picasso)",
     description:
