@@ -23,9 +23,9 @@ export const images = [
     position: [0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN("https://meine.rs/photography/img/Train%20Station.webp"),
-    title: "Codex Hammurapi",
+    title: "Train Station",
     description:
-      "The Code of Hammurabi, dating back to 1792-1750 BC, stands as the earliest known set of written laws. Carved into a stele, it showcases Babylonian legal codes under King Hammurabi's reign. The stele's summit portrays Hammurabi receiving authority from the god of justice, Shamash. Despite its harsh laws by today's standards, it introduced the concept of innocence until proven guilty. Crafted from dionite, a challenging material, the stele demonstrates Babylon's advanced skills in art, trade, and law.",
+      "This is a photo of a train station, taken by a good friend of mine. I spend a lot of time at train stations and for some reason this captures the experience of 5am train rides in the summer perfectly. It instantly brings back memories of many great trips and adventures. You can find more of his work at meine.rs!",
   },
   // Left
   {
@@ -35,9 +35,9 @@ export const images = [
     url: netlifyCDN(
       "https://malteroemer.com/wp-content/uploads/2024/03/Sandkuchendeautomat-2024-Malte-Roemer-kinetische-Installation-Kunstakademie-Karlsruhe-Scheibenhardt-scaled.jpg"
     ),
-    title: "Guernica (Picasso)",
+    title: "Sandkuchendeautomat",
     description:
-      "Picasso's Guernica stands as a powerful symbol of the horrors of war and a potent tool for political activism. Depicting the bombing of Guernica, it evokes the brutality of conflict through stark monochrome imagery. Created to support the antifascist cause in Spain, Picasso withheld its display until Franco's regime fell. Guernica remains a cherished emblem of justice and accountability, especially for Spain and the Basque people.",
+      "The so called 'Sandkuchendeautomat' is a kinetic installation by Malte Roemer. It was created in 2024 at the Kunstakademie Karlsruhe. The installation builds on the idea of a vending machine, but instead of dispensing snacks, it produces sand cakes that are instantly destroyed. The name is a play on words, combining the German words for 'sand cake', 'end', and 'vending machine'. You can find more of his work and the source of the image at malteroemer.com.",
   },
   {
     imageId: 3,
