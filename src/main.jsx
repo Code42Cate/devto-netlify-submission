@@ -75,17 +75,16 @@ export const images = [
   },
   {
     imageId: 6,
-    position: [2.15, 0, 1.7],
+    position: [2.15, 0, 2.1],
     rotation: [0, -Math.PI / 2.5, 0],
-    url: netlifyCDN(
-      "https://images.unsplash.com/photo-1549490349-8643362247b5"
-    ),
-    title: "The Virtual Gallery 7",
-    description: "The Virtual Gallery 7",
+    url: netlifyCDN("https://www.klaus-guendchen.de/Graphik/Winter1.jpg"),
+    title: "Metal Sculpture (Klaus Guendchen)",
+    description:
+      "Klaus Guendchen is another artist from Karlsruhe. He creates sculptures, mostly from metal. The cool thing is that they all make very interesting, mostly warm sounds when you touch them. This creates a contrast to the cold, hard material. The image is from his website at klaus-guendchen.de.",
   },
   {
     imageId: 7,
-    position: [2, 0, 3],
+    position: [2, 0, 3.5],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
       "https://images.unsplash.com/photo-1569091791842-7cfb64e04797"

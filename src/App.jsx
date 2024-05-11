@@ -346,7 +346,7 @@ function Frame({
         />
       </mesh>
       <Text
-        maxWidth={0.4}
+        maxWidth={0.8}
         anchorX="left"
         anchorY="top"
         position={[0.55, GOLDEN_RATIO, 0]}
