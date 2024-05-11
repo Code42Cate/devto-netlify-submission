@@ -12,11 +12,11 @@ export const images = [
     position: [-0.8, 0, -0.6],
     rotation: [0, 0, 0],
     url: netlifyCDN(
-      "https://upload.wikimedia.org/wikipedia/commons/f/f6/Duchamp_Fountaine.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg"
     ),
-    title: "Fountain (Duchamp)",
+    title: "The Scream (Munch)",
     description:
-      "Duchamp's 1917 creation, Fountain, marked a pivotal moment in modern art. Taking a urinal, turning it sideways, and signing it 'R. Mutt,' he challenged conventional notions of art. Though rejected from an exhibition, it sparked debates about art's essence. Fountain's significance lies in its ability to provoke thought and disagreement, pioneering Conceptual art and the Readymade movement.",
+      "The Scream, or 'me when I see the code I wrote last week', is a painting by the Norwegian artist Edvard Munch. It depicts a figure with an agonized expression against a landscape with a tumultuous orange sky. I just think its funny that this is one of the most famous paintings in the world and it's just a dude screaming. The image is from the Wikipedia page.",
   },
   {
     imageId: 1,
