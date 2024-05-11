@@ -67,11 +67,11 @@ export const images = [
     position: [1.75, 0, 0.25],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://www.arttrav.com/wp-content/uploads/2021/10/jeff-koons-strozzi-phAlexandraKorey03.jpg"
+      "https://images.e-flux-systems.com/508559_0a4e9502bc3b13db79040e849697e5a8.jpg,1400"
     ),
-    title: "Balloon Dog (Koons)",
+    title: "Blackness, White, and Light (Adam Pendleton)",
     description:
-      "Love him or hate him, Jeff Koons has undeniably made a significant impact on the art world, much like Marcel Duchamp did with The Fountain. Throughout his career, Koons has pushed boundaries, questioning the essence of art itself. He challenges whether art must be personally crafted or if it can be mass-produced by a workshop. This raises ethical dilemmas about the commodification of art and its relationship with marketing. Balloon Dog epitomizes these questions, as Koons has reproduced it in various forms, generating substantial profits and ubiquitous recognition across media platforms.",
+      "While most of the pieces are picked because I like them, this one is here because I don't understand it. I've seen an entire collection of Pendleton's work and I still don't get it. I think that's okay though. It's a reminder that not everything has to be to your taste or that you have to understand everything. The image is from the e-flux website.",
   },
   {
     imageId: 6,
