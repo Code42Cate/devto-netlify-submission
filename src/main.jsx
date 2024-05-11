@@ -48,7 +48,7 @@ export const images = [
     ),
     title: "Furniture Museum Vienna",
     description:
-      "This is a weird one and more a placeholder than anything else. In Vienne there is a museum for furniture with A LOT of chairs. It gave me an appreciation for the seamingly boring objects that we use every day. I think it's worth a visit if you're ever in the area! Picture is taken from their website at moebelmuseumwien.at",
+      "This is a weird one and more a placeholder than anything else. In Vienna there is a museum for furniture with A LOT of chairs. It gave me an appreciation for the seamingly boring objects that we use every day. I think it's worth a visit if you're ever in the area! Picture is taken from their website at moebelmuseumwien.at",
   },
   {
     imageId: 4,
@@ -59,7 +59,7 @@ export const images = [
     ),
     title: "Rhythm 0 (Abramovic)",
     description:
-      "Marina Abramovic, an early feminist performance artist, challenged societal norms and the endurance of the body to scrutinize women's social roles. In her 1974 piece, Rhythm 0, she stood motionless beside a table adorned with 72 objects, inviting spectators to interact freely with her for six hours. Initially tame, the audience's actions escalated into violence and even threats on her life. Abramovic's transformation into an object revealed stark truths about objectification, power dynamics, and societal boundaries.",
+      "Marina Abramovic, an early feminist performance artist, challenged societal norms and the endurance of the body to scrutinize women's social roles. In 1974 she stood motionless beside a table adorned with 72 objects, inviting spectators to interact freely with her for six hours. Initially tame, the audience's actions escalated into violence and even threats on her life. This was the first thing I have ever seen about performance art and it has stuck with me ever since. The image is from the MoMA website.",
   },
   // Right
   {
