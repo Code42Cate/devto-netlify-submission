@@ -3,7 +3,7 @@
 # TODO
 
 - [ ] Blobs as database?
-- [ ] Download images
+- [x] Download images
 - [ ] Add favorites
 - [x] Descriptions
 - [ ] Convert to NextJS

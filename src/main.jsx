@@ -44,11 +44,11 @@ export const images = [
     position: [-2.4, 0, 1.5],
     rotation: [0, Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://www.ackroydandharvey.com/wp-content/uploads/2021/08/02.-7000-Oaks-1982.jpg"
+      "https://www.moebelmuseumwien.at/fileadmin/_processed_/1/1/csm_Fauteuil_Galaxy_1_Walter_Pichler__Wien_1966-_c__BMobV_SKB__Foto_Lois_Lammerhuber_2a1f7e2e0f.jpg"
     ),
-    title: "7000 Oak Trees (Beuys)",
+    title: "Furniture Museum Vienna",
     description:
-      "Joseph Beuys's 7,000 Oak Trees project marked a pivotal moment in environmentally-focused art, heralding a movement of conceptual earthworks addressing ecological concerns. Responding to urbanization and habitat destruction in Kassel, Germany, Beuys, with volunteers, planted 7,000 oaks, each marked by a basalt stone. Beyond ecological intervention, it symbolized the start of Germany's environmental movement, fostering awareness of human impact on ecosystems as the trees matured.",
+      "This is a weird one and more a placeholder than anything else. In Vienne there is a museum for furniture with A LOT of chairs. It gave me an appreciation for the seamingly boring objects that we use every day. I think it's worth a visit if you're ever in the area! Picture is taken from their website at moebelmuseumwien.at",
   },
   {
     imageId: 4,

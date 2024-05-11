@@ -8,4 +8,5 @@ remote_images = [
   "https://www.arttrav.com/*",
   "https://meine.rs/*",
   "https://malteroemer.com",
+  "www.moebelmuseumwien.at",
 ]
