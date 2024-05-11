@@ -87,10 +87,11 @@ export const images = [
     position: [2, 0, 3.5],
     rotation: [0, -Math.PI / 2.5, 0],
     url: netlifyCDN(
-      "https://images.unsplash.com/photo-1569091791842-7cfb64e04797"
+      "https://www.braunhousehold.com/medias/en-psp-scs-braun-100yrs-principles-of-good-design-hc-def-01-innovative-1080x806.jpg?context=bWFzdGVyfHJvb3R8NDYwODd8aW1hZ2UvanBlZ3xhREZpTDJnMlppODVOelF3TkRrNU9EYzNPVEU0TDJWdVgzQnpjRjl6WTNOZlluSmhkVzR0TVRBd2VYSnpYM0J5YVc1amFYQnNaWE10YjJZdFoyOXZaQzFrWlhOcFoyNWZhR05mWkdWbVh6QXhYMmx1Ym05MllYUnBkbVZmTVRBNE1IZzRNRFl1YW5CbnwzYTQyYTRlYTEwNzhhYTY5NTQzZDc3YTRlYmY3NjU5Mzc0NWQzNTI4ZjE2Y2ZhMDc0Mzk0OThlZjRlNzI3MzQz"
     ),
-    title: "The Virtual Gallery 8",
-    description: "The Virtual Gallery 8",
+    title: "Dieter Rams",
+    description:
+      "Dieter Rams is a German industrial designer and retired academic closely associated with the consumer products company Braun and the Functionalist school of industrial design. I think his stuff is pretty cool and incredible timeless. I think we should all strive to create things that are as timeless as his work. The image is from the Braun website.",
   },
 ];
 
