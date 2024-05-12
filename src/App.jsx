@@ -5,6 +5,7 @@ import Neon from "./components/Light";
 import { Frames } from "./components/Frames";
 
 import DownloadDialog from "./components/DownloadDialog";
+import { useEffect } from "react";
 
 export const App = ({ images }) => {
   const windowWidth = useRef(window.innerWidth);
@@ -15,6 +16,16 @@ export const App = ({ images }) => {
     if (windowWidth.current <= 1000) return { fov: 100, position: [0, 2, 15] };
   };
   const [showDownloadModal, setShowDownloadModal] = useState(false);
+
+  const [likes, setLikes] = useState({});
+  useEffect(() => {
+    fetch("https://the-virtual-gallery.netlify.app/.netlify/functions/like")
+      .then((res) => res.json())
+      .then((data) => {
+        setLikes(data);
+        console.log(data);
+      });
+  }, [likes]);
 
   return (
     <>
