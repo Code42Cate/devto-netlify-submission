@@ -44,6 +44,33 @@ export default function DownloadDialog({
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div className="grid grid-cols-2 gap-4">
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="preset"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Wallpaper Preset
+                    </label>
+                    <select
+                      onChange={(e) => {
+                        if (!e.target.value) return;
+
+                        const [w, h] = e.target.value.split("x");
+                        setWidth(w);
+                        setHeight(h);
+                        setFit("contain");
+                      }}
+                      className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-amber-600 sm:text-sm sm:leading-6"
+                    >
+                      <option>Custom</option>
+                      <option value="3840x2160">Desktop 4k</option>
+                      <option value="2560x1440">Desktop 1440p</option>
+                      <option value="1920x1080">Desktop 1080p</option>
+                      <option value="1170x2532">iPhone 14</option>
+                      <option value="1170x2532">iPhone 13</option>
+                      <option value="1170x2532">iPhone 12</option>
+                    </select>
+                  </div>
                   <div>
                     <label
                       htmlFor="location"

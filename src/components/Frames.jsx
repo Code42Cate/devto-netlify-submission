@@ -138,6 +138,7 @@ export function Frame({
           <meshBasicMaterial toneMapped={false} fog={false} />
         </mesh>
         <Image
+          scale={[1, 1.61, 1]}
           raycast={() => null}
           ref={image}
           position={[0, 0, 0.7]}
