@@ -25,7 +25,7 @@ export const App = ({ images }) => {
         setLikes(data);
         console.log(data);
       });
-  }, [likes]);
+  }, []);
 
   return (
     <>
