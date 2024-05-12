@@ -23,7 +23,7 @@ export default async (req, context) => {
     );
   }
 
-  likes[Number(req.query.imageId)] += 1;
+  likes[Number(imageId)] += 1;
 
   await gallery.set("likes", likes);
 
