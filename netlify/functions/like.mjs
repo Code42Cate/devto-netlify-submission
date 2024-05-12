@@ -22,7 +22,7 @@ export default async (req, context) => {
 
   await gallery.set("likes", likes);
 */
-  return new Response(JSON.stringify(likes), {
+  return new Response(JSON.stringify(req), {
     headers: {
       "content-type": "application/json",
     },
