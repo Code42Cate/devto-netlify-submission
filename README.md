@@ -1,5 +1,16 @@
 # dev.to netlify challenge submission
 
+Read the post here:
+
+## Development:
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+## Sources
+
 - **The Scream (Munch)**
 
   - _by Edvard Munch_
