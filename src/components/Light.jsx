@@ -4,22 +4,18 @@ import { useRef } from "react";
 import * as THREE from "three";
 
 export default function Neon() {
-  const neon2Ref = useRef();
+  const ref = useRef();
 
   return (
     <group>
       <mesh rotation={[0, 0, 0.5]} position={[-0.035, 0.445, -0.6]}>
         <cylinderGeometry args={[0.012, 0.012, 1, 32]} />
         <meshStandardMaterial
-          // color="#c23a67"
-          // emissive="#7a042b"
-          // emissiveIntensity={3}
           color="#ffffff"
           emissive="#ffffff"
           emissiveIntensity={3}
         />
       </mesh>
-
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 1.8]}
         position={[-2, 0.02, 4]}
@@ -31,7 +27,6 @@ export default function Neon() {
           emissiveIntensity={3}
         />
       </mesh>
-
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.05]}
         position={[-1.8, 0.02, 2.2]}
@@ -43,22 +38,18 @@ export default function Neon() {
           emissiveIntensity={3}
         />
       </mesh>
-
       <mesh
-        ref={neon2Ref}
+        ref={ref}
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.9]}
         position={[1.2, 0.02, 1.5]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
-          // emissive={isFlashing ? "#FFFFFF" : null}
-          // emissiveIntensity={isFlashing ? 0 : 1}
           color="#ffffff"
           emissive="#ffffff"
           emissiveIntensity={3}
         />
       </mesh>
-
       <group>
         <mesh
           rotation={[-Math.PI / 2, 0, -Math.PI * 2.06]}
@@ -72,7 +63,6 @@ export default function Neon() {
           />
         </mesh>
       </group>
-
       <group>
         <Tube
           rotation={[-0.3, 0, Math.PI / 2]}
@@ -81,10 +71,9 @@ export default function Neon() {
             new THREE.CatmullRomCurve3([
               new THREE.Vector3(1, 0, 0),
               new THREE.Vector3(2.2, 0, 0),
-              // Ajoutez plus de points pour créer la forme de votre néon
-            ]), // Ceci est la courbe qui définit la forme du néon
-            64, // segments
-            0.02, // rayon
+            ]),
+            64,
+            0.02,
           ]}
         >
           <meshStandardMaterial
@@ -94,9 +83,6 @@ export default function Neon() {
           />
         </Tube>
       </group>
-
-      {/* BEHIND */}
-
       <group>
         <Tube
           rotation={[-0, (Math.PI / 2) * 0.9, 0]}
@@ -106,10 +92,9 @@ export default function Neon() {
               new THREE.Vector3(1, 0, 0),
               new THREE.Vector3(2, 0, 0),
               new THREE.Vector3(3, 0, 0),
-              // Ajoutez plus de points pour créer la forme de votre néon
-            ]), // Ceci est la courbe qui définit la forme du néon
-            64, // segments
-            0.025, // rayon
+            ]),
+            64,
+            0.025,
           ]}
         >
           <meshStandardMaterial
@@ -119,7 +104,6 @@ export default function Neon() {
           />
         </Tube>
       </group>
-
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.9]}
         position={[2.5, 0.02, 0.7]}

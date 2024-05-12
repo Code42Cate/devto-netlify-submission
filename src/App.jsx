@@ -3,9 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import Neon from "./components/Light";
 import { Frames } from "./components/Frames";
-
 import DownloadDialog from "./components/DownloadDialog";
-import { useEffect } from "react";
 
 export const App = ({ images }) => {
   const windowWidth = useRef(window.innerWidth);

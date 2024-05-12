@@ -2,7 +2,6 @@ const netlifyCDN = (url) =>
   `https://the-virtual-gallery.netlify.app/.netlify/images?url=${url}&w=2520&h=1500&fit=fill`;
 
 export const images = [
-  // Back
   {
     imageId: 0,
     position: [-0.8, 0, -0.6],
@@ -23,7 +22,6 @@ export const images = [
     description:
       "This is a photo of a train station, taken by a good friend of mine. I spend a lot of time at train stations and for some reason this captures the experience of 5am train rides in the summer perfectly. It instantly brings back memories of many great trips and adventures. You can find more of his work at meine.rs!",
   },
-  // Left
   {
     imageId: 2,
     position: [-1.75, 0, 0.25],
@@ -57,7 +55,6 @@ export const images = [
     description:
       "Marina Abramovic, an early feminist performance artist, challenged societal norms and the endurance of the body to scrutinize women's social roles. In 1974 she stood motionless beside a table adorned with 72 objects, inviting spectators to interact freely with her for six hours. Initially tame, the audience's actions escalated into violence and even threats on her life. This was the first thing I have ever seen about performance art and it has stuck with me ever since. The image is from the MoMA website.",
   },
-  // Right
   {
     imageId: 5,
     position: [1.75, 0, 0.25],
