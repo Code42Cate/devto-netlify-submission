@@ -4,7 +4,7 @@
 
 - [ ] Blobs as database?
 - [x] Download images
-- [ ] Add favorites
+- [x] Add favorites
 - [x] Descriptions
 - [ ] Convert to NextJS
 
