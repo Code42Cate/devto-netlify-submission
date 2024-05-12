@@ -1,3 +1,28 @@
+import { getStore } from "@netlify/blobs";
+import { images } from "../../src/main";
+
 export default async (req, context) => {
-  return new Response("Hello, world!");
+  const gallery = getStore("gallery");
+
+  const likes = await gallery.get("likes");
+
+  if (!likes) {
+    await gallery.set(
+      "likes",
+      images.reduce((acc, img) => {
+        acc[img.imageId] = 0;
+        return acc;
+      }, {})
+    );
+  }
+
+  likes[req.query.imageId] += 1;
+
+  await gallery.set("likes", likes);
+
+  return new Response(JSON.stringify(likes), {
+    headers: {
+      "content-type": "application/json",
+    },
+  });
 };
