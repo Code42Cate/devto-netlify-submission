@@ -17,24 +17,13 @@ export const App = ({ images }) => {
   };
   const [showDownloadModal, setShowDownloadModal] = useState(false);
 
-  const [likes, setLikes] = useState({});
-  useEffect(() => {
-    fetch("https://the-virtual-gallery.netlify.app/.netlify/functions/like")
-      .then((res) => res.json())
-      .then(setLikes);
-  }, []);
-
   return (
     <>
       <Canvas dpr={[1, 2]} camera={handleResize()}>
         <color attach="background" args={["#E7E5E4"]} />
         <fog attach="fog" args={["#191920", 0, 15]} />
         <group position={[0, -0.5, 0]}>
-          <Frames
-            images={images}
-            setShowDownloadModal={setShowDownloadModal}
-            likes={likes}
-          />
+          <Frames images={images} setShowDownloadModal={setShowDownloadModal} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
