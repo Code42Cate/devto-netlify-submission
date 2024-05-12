@@ -9,6 +9,7 @@ const GOLDEN_RATIO = 1.61803398875;
 
 export function Frames({
   images,
+  likes,
   q = new THREE.Quaternion(),
   p = new THREE.Vector3(),
   setShowDownloadModal,
@@ -46,7 +47,7 @@ export function Frames({
       onPointerMissed={() => setLocation("/")}
     >
       {images.map(
-        (props) => <Frame key={props.url} setShowDownloadModal={setShowDownloadModal} {...props} /> /* prettier-ignore */
+        (props) => <Frame key={props.url} likes={likes} setShowDownloadModal={setShowDownloadModal} {...props} /> /* prettier-ignore */
       )}
     </group>
   );
@@ -57,6 +58,7 @@ export function Frame({
   title,
   imageId,
   url,
+  likes,
   setShowDownloadModal,
   c = new THREE.Color(),
   ...props
@@ -186,6 +188,31 @@ export function Frame({
                 font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-700-normal.woff"
               >
                 Save
+              </Text>
+            </mesh>
+          )}
+          {Object.entries(likes).find(([key]) => key === Number(params.id)) && (
+            <mesh
+              onClick={(e) => {
+                setShowDownloadModal(true);
+                e.stopPropagation();
+              }}
+              position={[0.9, GOLDEN_RATIO + descriptionSize[1] - 0.15, 0]}
+            >
+              <boxGeometry args={[0.2, 0.08, 0.02]} />
+              <meshStandardMaterial color="white" />
+              <Text
+                position={[-0.01, 0, 0.03]}
+                fontSize={0.04}
+                color="black"
+                font="https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-700-normal.woff"
+              >
+                {
+                  Object.entries(likes).find(
+                    ([key]) => key === Number(params.id)
+                  )[1]
+                }
+                💖
               </Text>
             </mesh>
           )}

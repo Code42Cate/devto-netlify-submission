@@ -21,10 +21,7 @@ export const App = ({ images }) => {
   useEffect(() => {
     fetch("https://the-virtual-gallery.netlify.app/.netlify/functions/like")
       .then((res) => res.json())
-      .then((data) => {
-        setLikes(data);
-        console.log(data);
-      });
+      .then(setLikes);
   }, []);
 
   return (
@@ -33,7 +30,11 @@ export const App = ({ images }) => {
         <color attach="background" args={["#E7E5E4"]} />
         <fog attach="fog" args={["#191920", 0, 15]} />
         <group position={[0, -0.5, 0]}>
-          <Frames images={images} setShowDownloadModal={setShowDownloadModal} />
+          <Frames
+            images={images}
+            setShowDownloadModal={setShowDownloadModal}
+            likes={likes}
+          />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
