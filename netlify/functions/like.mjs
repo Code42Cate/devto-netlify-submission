@@ -13,6 +13,8 @@ export default async (req, context) => {
     return new Response("Missing imageId", { status: 400 });
   }
 
+  likes[Number(imageId)] = likes[Number(imageId)] || 0;
+
   likes[Number(imageId)] += 1;
 
   await gallery.set("likes", JSON.stringify(likes));
