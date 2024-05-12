@@ -3,7 +3,7 @@ import React from "react";
 import { useRef } from "react";
 import * as THREE from "three";
 
-export function NeonLight() {
+export default function Neon() {
   const neon2Ref = useRef();
 
   return (
@@ -11,6 +11,9 @@ export function NeonLight() {
       <mesh rotation={[0, 0, 0.5]} position={[-0.035, 0.445, -0.6]}>
         <cylinderGeometry args={[0.012, 0.012, 1, 32]} />
         <meshStandardMaterial
+          // color="#c23a67"
+          // emissive="#7a042b"
+          // emissiveIntensity={3}
           color="#ffffff"
           emissive="#ffffff"
           emissiveIntensity={3}
@@ -19,7 +22,7 @@ export function NeonLight() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 1.8]}
-        position={[-1.7, 0.02, 4]}
+        position={[-2, 0.02, 4]}
       >
         <cylinderGeometry args={[0.02, 0.02, 1.5, 32]} />
         <meshStandardMaterial
@@ -31,7 +34,7 @@ export function NeonLight() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.05]}
-        position={[-1.2, 0.02, 2.2]}
+        position={[-1.8, 0.02, 2.2]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
@@ -48,6 +51,8 @@ export function NeonLight() {
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
+          // emissive={isFlashing ? "#FFFFFF" : null}
+          // emissiveIntensity={isFlashing ? 0 : 1}
           color="#ffffff"
           emissive="#ffffff"
           emissiveIntensity={3}
