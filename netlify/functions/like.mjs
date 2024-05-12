@@ -1,7 +1,6 @@
 import { getStore } from "@netlify/blobs";
-import { images } from "../../src/data";
 
-export default async (req, context) => {
+export default async (req, _) => {
   const gallery = getStore("gallery");
 
   let likes = JSON.parse(await gallery.get("likes") || "{}");
@@ -11,7 +10,9 @@ export default async (req, context) => {
     return new Response("Missing imageId", { status: 400 });
   }
 
-  likes[Number(imageId)] = likes[Number(imageId)] || 0;
+  if (!likes[Number(imageId)]) {
+    likes[Number(imageId)] = 0;
+  }
 
   likes[Number(imageId)] += 1;
 
