@@ -1,5 +1,5 @@
 import { getStore } from "@netlify/blobs";
-import { images } from "../../src/main";
+import { images } from "../../src/data";
 
 export default async (req, context) => {
   const gallery = getStore("gallery");
