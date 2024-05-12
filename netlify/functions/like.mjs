@@ -4,8 +4,6 @@ import { images } from "../../src/data";
 export default async (req, context) => {
   const gallery = getStore("gallery");
 
-  await gallery.delete("likes")
-
   let likes = JSON.parse(await gallery.get("likes") || "{}");
   const imageId = new URL(req.url).searchParams.get("imageId");
 
