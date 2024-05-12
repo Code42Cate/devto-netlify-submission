@@ -6,6 +6,8 @@ export default async (req, context) => {
 
   const likes = await gallery.get("likes");
 
+  /*
+  
   if (!likes) {
     await gallery.set(
       "likes",
@@ -19,7 +21,7 @@ export default async (req, context) => {
   likes[req.query.imageId] += 1;
 
   await gallery.set("likes", likes);
-
+*/
   return new Response(JSON.stringify(likes), {
     headers: {
       "content-type": "application/json",
